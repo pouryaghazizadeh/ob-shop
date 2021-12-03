@@ -4,7 +4,10 @@
   "description": "",
   "main": "lib/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node Backend/lib/server.js",
+    "server": "nodemon Backend/lib/server.js",
+    "client": "npm start --prefix Frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "repository": {
     "type": "git",
