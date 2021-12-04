@@ -1,5 +1,13 @@
 require("dotenv").config()
 const express = require('express')
+// import database
+const connectDB = require('../config/db')
+
+
+// run db
+connectDB()
+
+
 
 const app = express()
 
