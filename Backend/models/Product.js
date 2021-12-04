@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 // make model for database
-const productSchema = mongoose.Schema({
+const productSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
