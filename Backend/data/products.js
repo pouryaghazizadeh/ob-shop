@@ -147,7 +147,6 @@ const products = [
 
     description:
       "PlayStation 4 (PS4) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4,  was released on November 12, 202015 in Australia, Japan, New Zealand, North America, Singapore, and South Korea, and November 19, 2015 onwards in other major markets except China and India.",
-
     price: 330,
     countInStock: 10,
   },
