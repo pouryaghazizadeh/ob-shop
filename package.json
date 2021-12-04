@@ -8,7 +8,7 @@
     "server": "nodemon Backend/lib/server.js",
     "client": "npm start --prefix Frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "data:import":"node Backend/seederScript.js"
+    "data:import": "node Backend/seederScript.js"
   },
   "repository": {
     "type": "git",

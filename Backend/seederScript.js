@@ -5,7 +5,6 @@ productsData = require("./data/products");
 const connectDB = require("./config/db");
 // product model
 const Product = require("./models/Product");
-
 // call db
 connectDB();
 
