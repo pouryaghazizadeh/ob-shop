@@ -1,11 +1,12 @@
 import React from 'react'
 
-function ProductScreen() {
+function Shop() {
     return (
         <div>
+            
             
         </div>
     )
 }
 
-export default ProductScreen
+export default Shop

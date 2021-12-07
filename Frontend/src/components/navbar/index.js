@@ -1,29 +1,25 @@
-// tools 
+// tools
 import { useState } from "react";
-
+// icons
+import { FaBars, FaShoppingCart, FaTimes } from "react-icons/fa";
 // style
 import {
+  ContainerIcons,
   Header,
-  Title,
-  Nav,
   Menu,
-  Item,
+  Nav,
   NavLinks,
   NavLinksShop,
   ShopNumber,
-  ContainerIcons,
+  Title,
 } from "./view";
 
-
-// icons
-import { FaBars,FaTimes } from "react-icons/fa";
-
 const Navbar = () => {
-const [click,setClick] = useState(false)
-// functions for change mood
-const handelClick = ()=>{
-  setClick(!click)
-}
+  const [click, setClick] = useState(false);
+  // functions for change mood
+  const handelClick = () => {
+    setClick(!click);
+  };
   return (
     <Header>
       <Title>BrandShop</Title>
@@ -31,7 +27,8 @@ const handelClick = ()=>{
         <Menu>
           <li>
             <NavLinksShop to="#">
-              Shop
+              <FaShoppingCart />
+              Cards
               <ShopNumber>01</ShopNumber>
             </NavLinksShop>
           </li>

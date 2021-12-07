@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Header = styled.header`
   width: 100vw;
   height: 75px;
-  background: blue;
+  background: #090d11;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -19,6 +19,7 @@ export const Header = styled.header`
 export const Title = styled.h1`
   margin-right: 10px;
   margin-left: 10px;
+  color: #fff;
 `;
 
 export const Nav = styled.nav`
@@ -26,7 +27,7 @@ export const Nav = styled.nav`
   height: 100%;
   display: flex;
   justify-content: flex-end;
-  background: green;
+
   padding-right: 10px;
   transition: all 0.5s ease;
   @media screen and (max-width: 870px) {
@@ -39,6 +40,7 @@ export const Nav = styled.nav`
     left: ${({ click }) => (click ? "0px" : "-100%")};
     width: 100%;
     height: 100vh;
+    background: #1d1d1f;
   }
 `;
 
@@ -47,7 +49,7 @@ export const Menu = styled.ul`
   display: flex;
   width: 30%;
   height: 100%;
-  background: purple;
+  background: red;
   align-items: center;
   justify-content: space-around;
   @media screen and (max-width: 870px) {
@@ -61,27 +63,28 @@ export const NavLinksShop = styled(Link)`
   text-decoration: none;
   font-size: x-large;
   background: pink;
-  width: 50px;
   padding: 4px;
   color: #fff;
-  margin: 8px;
+ 
+  padding: 8px;
+  &:hover {
+    color: black;
+    background: #fff;
+  }
 `;
 
 export const NavLinks = styled(Link)`
   text-decoration: none;
   font-size: x-large;
   background: none;
-  border:1px solid #fff;
-  /* width: 100px; */
-  
+  border: 1px solid #fff;
+
   padding: 8px;
   color: #fff;
-&:hover{
-  color: black;
-  background: #fff;
-
-}
-
+  &:hover {
+    color: black;
+    background: #fff;
+  }
 `;
 export const ShopNumber = styled.span`
   background: red;
@@ -92,6 +95,7 @@ export const ShopNumber = styled.span`
 export const ContainerIcons = styled.div`
   font-size: xx-large;
   display: none;
+  color: #fff;
   @media screen and (max-width: 870px) {
     display: block;
     position: absolute;
