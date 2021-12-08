@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 
-export const ProductCard =styled.section`
+export const ProductCards =styled.section`
 background: plum;
 width: 300px;
 height: 400px;

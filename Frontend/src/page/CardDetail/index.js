@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import{addToCards}from "../../redux/actions/cardActions"
 // action
 import { getProductDetails } from "../../redux/actions/productActions";
 // style
@@ -15,7 +16,7 @@ import {
   OptionCard,
 } from "./view";
 
-function CardDetail({ match, history }) {
+function CardDetail({ history }) {
   const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
@@ -31,6 +32,13 @@ function CardDetail({ match, history }) {
       dispatch(getProductDetails(id));
     }
   }, [dispatch, id, product]);
+
+// finction for handel button for add product to shop
+const addToShopingHandeler = ()=>{
+  dispatch(addToCards(product._id,qty));
+  history.push("/shop");
+}
+
 
   return (
     <ContainerDetailCard>
@@ -71,6 +79,7 @@ function CardDetail({ match, history }) {
                 </option>
               ))}
             </select>
+            <button type="button" onClick={addToShopingHandeler}>add to shoping</button>
           </section>
         </>
       )}

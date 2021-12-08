@@ -5,21 +5,21 @@ import {
   ImgCard,
   LinkView,
   PriceCard,
-  ProductCard,
+  ProductCards,
   TitleCard,
 } from "./view";
 
-function Product({ imageUrl, name, price, description, productId }) {
+function ProductCard({ imageUrl, name, price, description, productId }) {
   return (
-    <ProductCard>
+    <ProductCards>
       <TitleCard>{name}</TitleCard>
       <ImgCard alt={name} src={imageUrl} />
       <DescriptionCard>{description.substring(0, 100)}...</DescriptionCard>
       <PriceCard>Price:${price}</PriceCard>
 
       <LinkView to={`/cardDetail/${productId}`}>view</LinkView>
-    </ProductCard>
+    </ProductCards>
   );
 }
 
-export default Product;
+export default ProductCard;
