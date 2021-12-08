@@ -24,9 +24,9 @@ export const getProductsReducer = (state = { products: [] }, action) => {
   }
 };
 
-// this for view product
+// this for product details
 
-export const getProductDetailsReducer = (state = { products: {} }, action) => {
+export const getProductDetailsReducer = (state = { product: {} }, action) => {
   switch (action.type) {
     case actionType.GET_PRODUCT_DETAILS_REQUEST:
       return {

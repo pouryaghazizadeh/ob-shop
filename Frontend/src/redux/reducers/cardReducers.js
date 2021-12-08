@@ -1,18 +1,22 @@
 import * as actionTypes from "../constants/cardConstants.js";
 
-export const cardReducers = (state={ cardItems: [] }, action) => {
+
+const CART_INITIAL_STATE = {
+  cartItems: [],
+};
+
+export const cardReducers = (state=CART_INITIAL_STATE, action) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CARD:
       const item = action.payload;
-
+      // this line looking for data for show in detail page
       const existItem = state.cardItems.find((x) => x.product === item.product);
 
       if (existItem) {
         return {
           ...state,
           cardItems: state.cardItems.map((x) =>
-            x.product === existItem.product ? item : x
-          ),
+            x.product === existItem.product ? item : x)
         };
       } else {
         return {
@@ -29,3 +33,4 @@ export const cardReducers = (state={ cardItems: [] }, action) => {
       return state;
   }
 };
+

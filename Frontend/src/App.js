@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/index";
 import GlobalStyle from "./globalStyles";
+import CardDetail from "./page/CardDetail";
 import Home from "./page/home";
-import CardDetail from "./page/CardDetail"
 import Shop from "./page/shop";
 
 function App() {
@@ -11,10 +11,9 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route  path="/" element={<Home />} />
-        <Route  path="/cardDetail:id" element={<CardDetail />} />
-        <Route  path="/shop" element={<Shop />} />
-
+        <Route index path="/" element={<Home />} />
+        <Route path="/cardDetail/:id" element={<CardDetail />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
       <GlobalStyle />
     </div>
