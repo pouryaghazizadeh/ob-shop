@@ -15,54 +15,65 @@ import {
   OptionCard,
 } from "./view";
 
-function CardDetail({ history }) {
-  const [qut, setQyt] = useState(1);
+function CardDetail({ match, history }) {
+  const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.getProductDetails);
-  const { error, loading, product} = productDetails;
+  const { error, loading, product } = productDetails;
 
-  const params = useParams();
-
+  // get id frpm url
+  const { id } = useParams();
 
   useEffect(() => {
-    if (product && params !== product._id) {
-      dispatch(getProductDetails(params));
+    if (product && id !== product._id) {
+      dispatch(getProductDetails(id));
     }
-  }, [dispatch, params, product]);
+  }, [dispatch, id, product]);
 
-
-
-  
   return (
     <ContainerDetailCard>
-      <CardsDetail>
-        <ImgDetailCard
-          alt="f"
-          src="https://images.unsplash.com/photo-1638708012834-fed2bf506e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-        />
-        <ContainrtInfo>
-          <DescriptionCardDetail>
-            gklnfen gkfejlkg kfsdklgnfe kferjgp kgjkrep kgnreop ifenro eokrf
-            kfeov kiefnv ofknbv orbfneo kfoebn
-          </DescriptionCardDetail>
-          <AddCardToShop to="#">Add Product</AddCardToShop>
-        </ContainrtInfo>
-      </CardsDetail>
+      {loading ? (
+        <h2>loading...</h2>
+      ) : error ? (
+        <h2>{error}</h2>
+      ) : (
+        <>
+          <CardsDetail>
+            <ImgDetailCard alt={product.name} src={product.imageUrl} />
+            <ContainrtInfo>
+              <p>{product.name}</p>
+              <DescriptionCardDetail>
+                {product.description}
+              </DescriptionCardDetail>
+              <p>{product.price}</p>
+              <AddCardToShop to="#">Add Product</AddCardToShop>
+            </ContainrtInfo>
+          </CardsDetail>
 
-      {/* this tag is for choose more products */}
-      <OptionCard>vfdbnflbnjfofidnlivjsx</OptionCard>
-      {/* <section>
-        <p>price</p>
-        <p>status:in store</p>
-        <select value="qty">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-        </select>
-        <p>price</p>
-      </section> */}
+          {/* this tag is for choose more products */}
+          <OptionCard>vfdbnflbnjfofidnlivjsx</OptionCard>
+          {/* thid price is for all price products */}
+          <p>{product.price}</p>
+          <p>{product.countInStock > 0 ? "in stock" : "out of stock"}</p>
+
+          <section>
+            <select
+              value={qty}
+              onChange={(e) => {
+                setQty(e.target.value);
+              }}
+            >
+              {[...Array(product.countInStock).keys()].map((x) => (
+                <option key={x + 1} value={x + 1}>
+                  {x + 1}
+                </option>
+              ))}
+            </select>
+          </section>
+        </>
+      )}
     </ContainerDetailCard>
   );
 }
