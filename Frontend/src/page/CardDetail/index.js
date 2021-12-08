@@ -1,3 +1,10 @@
+// tools
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+// action
+import { getProductDetails } from "../../redux/actions/productActions";
+// style
 import {
   AddCardToShop,
   CardsDetail,
@@ -7,7 +14,27 @@ import {
   ImgDetailCard,
   OptionCard,
 } from "./view";
-function CardDetail() {
+
+function CardDetail({ history }) {
+  const [qut, setQyt] = useState(1);
+
+  const dispatch = useDispatch();
+
+  const productDetails = useSelector((state) => state.getProductDetails);
+  const { error, loading, product} = productDetails;
+
+  const params = useParams();
+
+
+  useEffect(() => {
+    if (product && params !== product._id) {
+      dispatch(getProductDetails(params));
+    }
+  }, [dispatch, params, product]);
+
+
+
+  
   return (
     <ContainerDetailCard>
       <CardsDetail>
@@ -26,17 +53,16 @@ function CardDetail() {
 
       {/* this tag is for choose more products */}
       <OptionCard>vfdbnflbnjfofidnlivjsx</OptionCard>
-      <section>
+      {/* <section>
         <p>price</p>
         <p>status:in store</p>
         <select value="qty">
-     
           <option>1</option>
           <option>2</option>
           <option>3</option>
         </select>
         <p>price</p>
-      </section>
+      </section> */}
     </ContainerDetailCard>
   );
 }

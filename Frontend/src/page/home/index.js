@@ -14,26 +14,28 @@ function Home() {
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch]);
-  return <HomePage>
-  
-  
-     {
-        loading ? (<h2>loading...</h2>) : error ? ( <h2>{error}</h2>) : (
+  return (
+    <HomePage>
+      {loading ? (
+        <h2>loading...</h2>
+      ) : error ? (
+        <h2>{error}</h2>
+      ) : (
         products.map((product) => {
-        return (
-          <Product
-          key={product._id}
-            imageUrl={product.imageUrl}
-            name={product.name}
-            price={product.price}
-            description={product.description}
-            productId={product._id}
-          />
-        );
-   
+          return (
+            <Product
+              key={product._id}
+              imageUrl={product.imageUrl}
+              name={product.name}
+              price={product.price}
+              description={product.description}
+              productId={product._id}
+            />
+          );
         })
       )}
-   </HomePage>;
+    </HomePage>
+  );
 }
 
 export default Home;

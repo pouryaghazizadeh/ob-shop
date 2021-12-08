@@ -9,15 +9,15 @@ import {
   TitleCard,
 } from "./view";
 
-function Product({ imageUrl,name,price,description ,productId}) {
+function Product({ imageUrl, name, price, description, productId }) {
   return (
     <ProductCard>
       <TitleCard>{name}</TitleCard>
       <ImgCard alt={name} src={imageUrl} />
-      <DescriptionCard>{description.substring(0,100)}...</DescriptionCard>
+      <DescriptionCard>{description.substring(0, 100)}...</DescriptionCard>
       <PriceCard>Price:${price}</PriceCard>
 
-      <LinkView to={`/cardDetail/:${productId}`}>view</LinkView>
+      <LinkView to={`/cardDetail/${productId}`}>view</LinkView>
     </ProductCard>
   );
 }
