@@ -17,7 +17,7 @@ function ProductCard({ imageUrl, name, price, description, productId }) {
       <DescriptionCard>{description.substring(0, 100)}...</DescriptionCard>
       <PriceCard>Price:${price}</PriceCard>
 
-      <LinkView to={`/cardDetail/${productId}`}>view</LinkView>
+      <LinkView to={`/products/productDetail/${productId}`}>view</LinkView>
     </ProductCards>
   );
 }
