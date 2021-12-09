@@ -49,7 +49,7 @@ export const Menu = styled.ul`
   display: flex;
   width: 30%;
   height: 100%;
-  background: red;
+ 
   align-items: center;
   justify-content: space-around;
   @media screen and (max-width: 870px) {
