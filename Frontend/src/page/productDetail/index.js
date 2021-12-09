@@ -16,7 +16,7 @@ import {
   OptionCard,
 } from "./view";
 
-function CardDetail({ history }) {
+function ProductDetail({ history }) {
   const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
@@ -87,4 +87,4 @@ const addToShopingHandeler = ()=>{
   );
 }
 
-export default CardDetail;
+export default ProductDetail;

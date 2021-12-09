@@ -26,14 +26,14 @@ const Navbar = () => {
       <Nav click={click}>
         <Menu>
           <li>
-            <NavLinksShop to="#">
+            <NavLinksShop to="/product">
               <FaShoppingCart />
               Cards
               <ShopNumber>01</ShopNumber>
             </NavLinksShop>
           </li>
           <li>
-            <NavLinks to="#">Shops</NavLinks>
+            <NavLinks to="/shop">Shops</NavLinks>
           </li>
         </Menu>
       </Nav>
