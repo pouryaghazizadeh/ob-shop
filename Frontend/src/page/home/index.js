@@ -9,7 +9,7 @@ function Home() {
         <h1>helloooo</h1>
         <h1>helloooo</h1>
         <h1>helloooo</h1>
-        <Link to="/product" >vfevfvefr</Link>
+        <Link to="/products" >vfevfvefr</Link>
       </div>
     );
 }

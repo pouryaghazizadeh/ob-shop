@@ -1,21 +1,21 @@
 import * as actionTypes from "../constants/cardConstants.js";
 
-const CART_INITIAL_STATE = {
-  cartItems: [],
-};
-
-export const cardReducers = (state = CART_INITIAL_STATE, action) => {
+export const cardReducers = (state = { cardItems: [] }, action) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CARD:
       const item = action.payload;
-      // this line looking for data for show in detail page
-      const existItem = state.cardItems.find((x) => x.product === item.product);
+
+      // this line add data to shop
+      // this product thats means id check in cardAction.js
+      const existItem = state.cardItems.find(
+        (data) => data.product === item.product
+      );
 
       if (existItem) {
         return {
           ...state,
-          cardItems: state.cardItems.map((x) =>
-            x.product === existItem.product ? item : x
+          cardItems: state.cardItems.map((data) =>
+            data.product === existItem.product ? item : data
           ),
         };
       } else {
@@ -27,7 +27,7 @@ export const cardReducers = (state = CART_INITIAL_STATE, action) => {
     case actionTypes.REMOVE_FROM_CARD:
       return {
         ...state,
-        cardItems: state.cardItems.filter((x) => x.product !== action.payload),
+        cardItems: state.cardItems.filter((data) => data.product !== action.payload),
       };
     default:
       return state;

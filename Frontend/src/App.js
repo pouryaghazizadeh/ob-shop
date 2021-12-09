@@ -12,9 +12,9 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route  path="/" element={<Home />} />
-        <Route path="/product" element={<Products />} />
-        <Route path="/cardDetail/:id" element={<CardDetail />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/products/productDetail/:id" element={<CardDetail />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/shop" element={<Shop />} />
       </Routes>
       <GlobalStyle />

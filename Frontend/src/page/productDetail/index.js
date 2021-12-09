@@ -1,7 +1,7 @@
 // tools
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import{addToCards}from "../../redux/actions/cardActions"
 // action
 import { getProductDetails } from "../../redux/actions/productActions";
@@ -36,7 +36,7 @@ function ProductDetail({ history }) {
 // finction for handel button for add product to shop
 const addToShopingHandeler = ()=>{
   dispatch(addToCards(product._id,qty));
-  history.push("/shop");
+  // history.push("/shop");
 }
 
 
@@ -79,7 +79,7 @@ const addToShopingHandeler = ()=>{
                 </option>
               ))}
             </select>
-            <button type="button" onClick={addToShopingHandeler}>add to shoping</button>
+            <Link to="/shop" onClick={addToShopingHandeler}>add to shoping</Link>
           </section>
         </>
       )}

@@ -9,6 +9,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: flex-end;
   position: fixed;
+  top: 0;
   z-index: 999;
 
   @media screen and (max-width: 870px) {
