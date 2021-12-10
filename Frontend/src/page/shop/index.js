@@ -28,11 +28,6 @@ function Shop() {
 
   };
 
-
-
-
-
-
   //  for price
   const getcardSubTotal = () => {
     return cardItems.reduce((price, item) => item.price * item.qty + price, 0);
