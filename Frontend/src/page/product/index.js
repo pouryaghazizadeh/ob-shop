@@ -5,7 +5,7 @@ import ProductCard from "../../components/product/index";
 // actions
 import { getProducts as listProducts } from "../../redux/actions/productActions";
 // style
-import { HomePage } from "./view";
+import { ProductPage, LoadingAndErrorTitleProduct } from "./view";
 
 function Products() {
   const dispatch = useDispatch();
@@ -15,11 +15,11 @@ function Products() {
     dispatch(listProducts());
   }, [dispatch]);
   return (
-    <HomePage>
+    <ProductPage>
       {loading ? (
-        <h2>loading...</h2>
+        <LoadingAndErrorTitleProduct>loading...</LoadingAndErrorTitleProduct>
       ) : error ? (
-        <h2>{error}</h2>
+        <LoadingAndErrorTitleProduct>{error}</LoadingAndErrorTitleProduct>
       ) : (
         products.map((product) => {
           return (
@@ -34,7 +34,7 @@ function Products() {
           );
         })
       )}
-    </HomePage>
+    </ProductPage>
   );
 }
 

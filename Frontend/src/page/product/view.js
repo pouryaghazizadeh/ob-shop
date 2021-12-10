@@ -1,15 +1,20 @@
 import styled from "styled-components";
 
-export const HomePage =styled.section`
-position: relative;
-top:80px;
-display: flex;
-gap: 10px;
-flex-wrap: wrap;
-justify-content: space-between;
-justify-content: center;
-height: 100vh;
+export const ProductPage = styled.section`
+  margin-top: 75px;
+  padding-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+  height: 100%;
+  background: #fff;
+`;
 
-background: blue;
+
+export const LoadingAndErrorTitleProduct = styled.h2`
+font-size:45px ;
+color:#1d1d1f;
 
 `

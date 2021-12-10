@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import styled from "styled-components";
 
 export const Header = styled.header`
@@ -50,7 +50,7 @@ export const Menu = styled.ul`
   display: flex;
   width: 30%;
   height: 100%;
- 
+ background: green;
   align-items: center;
   justify-content: space-around;
   @media screen and (max-width: 870px) {
@@ -64,11 +64,12 @@ export const NavLinksShop = styled(Link)`
   text-decoration: none;
   font-size: x-large;
   background: pink;
-  padding: 4px;
+
   color: #fff;
-  width: 40px;
- 
-  padding: 8px;
+ width: 95px;
+  height: 45px;
+ display: flex;
+
   &:hover {
     color: black;
     background: #fff;
@@ -80,9 +81,11 @@ export const NavLinks = styled(Link)`
   font-size: x-large;
   background: none;
   border: 1px solid #fff;
-
-  padding: 8px;
+  display: flex;
+  width: 95px;
+  height: 45px;
   color: #fff;
+  text-align:center
   &:hover {
     color: black;
     background: #fff;
