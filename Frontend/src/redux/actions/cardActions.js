@@ -3,7 +3,7 @@ import * as actionTypes from "../constants/cardConstants"
 import axios from "axios"
 
 
-export const addToCards = (id, Qty) => async(dispatch,getState)=>{
+export const addToCards = (id, qty) => async(dispatch,getState)=>{
     const { data } = await axios.get(`/api/products/${id}`);
     
 
@@ -15,7 +15,7 @@ export const addToCards = (id, Qty) => async(dispatch,getState)=>{
             imageUrl:data.imageUrl,
             price:data.price,
             countInStock:data.countInStock,
-            Qty
+            qty
 
         }
         

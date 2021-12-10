@@ -21,12 +21,23 @@ function Shop() {
   const removeHandeler = (id) => {
     dispatch(removeFromCard(id));
   };
-  // for subtotal 
-  const getCardCount =() => {
-    return cardItems.reduce((item, qty) => Number(item.qty) + qty,0);
+  // for subtotal
+  const getCardCount = () => {
+
+       return cardItems.reduce((qty, item) => qty + Number(item.qty), 0);
 
   };
-  console.log(getCardCount());
+
+
+
+
+
+
+  //  for price
+  const getcardSubTotal = () => {
+    return cardItems.reduce((price, item) => item.price * item.qty + price, 0);
+  };
+  console.log(cardItems);
   return (
     <ContainerShop>
       <ContainerCard>
@@ -38,8 +49,8 @@ function Shop() {
           </>
         ) : (
           cardItems.map((item) => (
-            <CardShop 
-            key={item.product}
+            <CardShop
+              key={item.product}
               item={item}
               qtyChangeHandeler={qtyChangeHandeler}
               removeHandeler={removeHandeler}
@@ -48,8 +59,8 @@ function Shop() {
         )}
       </ContainerCard>
       <InfoBuy>
-        <p>subtotal ({getCardCount()})ithem</p>
-        <p>$123</p>
+        <p>subtotal ( {getCardCount()} )ithem</p>
+        <p>${getcardSubTotal().toFixed(2)}</p>
         <button>gfre</button>
       </InfoBuy>
     </ContainerShop>
