@@ -1,5 +1,6 @@
 // tools
 import { useState } from "react";
+import { useSelector } from "react-redux";
 // icons
 import { FaBars, FaShoppingCart, FaTimes } from "react-icons/fa";
 // style
@@ -14,12 +15,23 @@ import {
   Title,
 } from "./view";
 
+
+
 const Navbar = () => {
+  // use state for button mobile screen
   const [click, setClick] = useState(false);
   // functions for change mood
   const handelClick = () => {
     setClick(!click);
   };
+
+
+  // 
+  const card = useSelector(state=>state.card)
+  const {cardItems} = card
+  const getCardCount = ()=>{
+    return cardItems.reduce((qty, item) => qty + Number(item.qty), 0);
+  }
   return (
     <Header>
       <Title>BrandShop</Title>
@@ -29,7 +41,7 @@ const Navbar = () => {
             <NavLinksShop to="/product">
               <FaShoppingCart />
               Cards
-              <ShopNumber>01</ShopNumber>
+              <ShopNumber>{getCardCount()}</ShopNumber>
             </NavLinksShop>
           </li>
           <li>

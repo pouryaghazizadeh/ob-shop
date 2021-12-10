@@ -66,6 +66,7 @@ export const NavLinksShop = styled(Link)`
   background: pink;
   padding: 4px;
   color: #fff;
+  width: 40px;
  
   padding: 8px;
   &:hover {
@@ -87,10 +88,12 @@ export const NavLinks = styled(Link)`
     background: #fff;
   }
 `;
-export const ShopNumber = styled.span`
+export const ShopNumber = styled.div`
   background: red;
   border-radius: 50px;
-  padding: 2px;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
 `;
 
 export const ContainerIcons = styled.div`
