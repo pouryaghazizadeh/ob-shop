@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const DetailCardPage = styled.section`
+export const DetailCardPage = styled.main`
   width: 100%;
   height: 100vh;
-  background-color: green;
   margin-top: 75px;
   display: flex;
-  align-items: center;
 
+  @media screen and (max-width: 870px) {
+    margin-top: 75px;
+    justify-content: center;
+    align-items: stretch;
+  }
 `;
 
 export const LoadingAndErrorText = styled.h2`
@@ -19,27 +21,57 @@ export const LoadingAndErrorText = styled.h2`
 export const CardsDetail = styled.section`
   width: 70vw;
   height: 80%;
-  background: blue;
+  border: 1px solid rgba(9, 14, 18, 0.3);
   display: flex;
   align-items: flex-start;
-  
+  position: absolute;
+  padding: 2px;
+  margin-left: 10px;
+  @media screen and (max-width: 870px) {
+    flex-direction: column;
+    height: 800px;
+    margin-top: 40px;
+  }
 `;
 export const NamedetailProduct = styled.h3`
-font-size:xx-large
-`
+  font-size: xx-large;
+`;
 
-export const ContainrtInfo = styled.div``;
+export const ContainrtInfo = styled.div`
+  width: auto;
+  @media screen and (max-width: 870px) {
+    width: 100%;
+  
+    height: 400px;
+  }
+`;
 
 export const ImgDetailCard = styled.img`
-  width: 700px;
-  height:80vh;
-  
+  width: 50%;
+  height: 79vh;
+  @media screen and (max-width: 870px) {
+    width: 100%;
+    height: 400px;
+  }
 `;
 
 export const DescriptionCardDetail = styled.p`
   font-size: x-large;
+  @media screen and (max-width:1203px) {
+    font-size: large;
+  }
 `;
 
-export const OptionCard = styled.section``;
+export const ProceAndStock = styled.p`
+  font-size: large;
+  font-weight:bold;
+ 
+`;
 
-export const AddCardToShop = styled(Link)``;
+export const SelectDetail = styled.select`
+  width: 120px;
+  height: 35px;
+  outline: none;
+  font-size: large;
+  margin:15px 0px 15px 0px;
+`;

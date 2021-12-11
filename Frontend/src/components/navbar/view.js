@@ -62,40 +62,22 @@ export const Menu = styled.ul`
 `;
 
 export const NavLinksShop = styled(NavLink)`
-  text-decoration: none;
-  font-size: x-large;
-  border: 1px solid #fff;
-  color: #fff;
-  width: 95px;
-  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  width: 100px;
+  height: 45px;
+  color: #fff;
+  text-decoration: none;
+  font-size: x-large;
+  &.active {
+    border-bottom: 2px solid #4cc5c6;
+  }
   &:hover {
-    color: black;
-    background: #fff;
+    border: 1px solid;
   }
 `;
 
-export const NavLinks = styled(NavLink)`
-  text-decoration: none;
-  font-size: x-large;
-  background: none;
-  border: 1px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 95px;
-  height: 45px;
-  color: #fff;
-  text-align:center
-  
-  &:hover:{
-    color: black;
-    background: #fff;
-  }
-`;
 export const ShopNumber = styled.div`
   background: #b2b2b2;
   border-radius: 50%;
