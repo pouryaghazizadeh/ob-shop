@@ -1,12 +1,11 @@
 // tools
-
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 // componrnts
 import CardShop from "../../components/cardShop/index";
 import { addToCards, removeFromCard } from "../../redux/actions/cardActions";
 // style
-import { ContainerCard, ContainerShop, InfoBuy } from "./view";
+import { ContainerCard, ShopPage, InfoBuy } from "./view";
 
 function Shop() {
   const dispatch = useDispatch();
@@ -34,9 +33,8 @@ function Shop() {
   };
   console.log(cardItems);
   return (
-    <ContainerShop>
+    <ShopPage>
       <ContainerCard>
-        {/* component card */}
         {cardItems === 0 ? (
           <>
             <h3>your card is empty</h3>
@@ -58,7 +56,7 @@ function Shop() {
         <p>${getcardSubTotal().toFixed(2)}</p>
         <button>gfre</button>
       </InfoBuy>
-    </ContainerShop>
+    </ShopPage>
   );
 }
 

@@ -1,22 +1,26 @@
 // tools
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import{addToCards}from "../../redux/actions/cardActions"
 // action
 import { getProductDetails } from "../../redux/actions/productActions";
+// component
+import BootonBlack from "../../components/Buttons/buttonBlack/index"
 // style
 import {
   AddCardToShop,
   CardsDetail,
-  ContainerDetailCard,
+  DetailCardPage,
   ContainrtInfo,
   DescriptionCardDetail,
   ImgDetailCard,
   OptionCard,
+  LoadingAndErrorText,
+  NamedetailProduct,
 } from "./view";
 
-function ProductDetail({ history }) {
+function ProductDetail() {
   const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
@@ -36,27 +40,32 @@ function ProductDetail({ history }) {
 // finction for handel button for add product to shop
 const addToShopingHandeler = ()=>{
   dispatch(addToCards(product._id,qty));
-  // history.push("/shop");
+ 
 }
 
 
   return (
-    <ContainerDetailCard>
+    <DetailCardPage>
       {loading ? (
-        <h2>loading...</h2>
+        <LoadingAndErrorText>loading...</LoadingAndErrorText>
       ) : error ? (
-        <h2>{error}</h2>
+        <LoadingAndErrorText>{error}</LoadingAndErrorText>
       ) : (
         <>
           <CardsDetail>
             <ImgDetailCard alt={product.name} src={product.imageUrl} />
             <ContainrtInfo>
-              <p>{product.name}</p>
+              <NamedetailProduct>{product.name}</NamedetailProduct>
               <DescriptionCardDetail>
                 {product.description}
               </DescriptionCardDetail>
               <p>{product.price}</p>
-              <AddCardToShop to="#">Add Product</AddCardToShop>
+              <BootonBlack
+                route="/shop"
+                value="Add Product"
+                event={addToShopingHandeler}
+              />
+  
             </ContainrtInfo>
           </CardsDetail>
 
@@ -79,11 +88,10 @@ const addToShopingHandeler = ()=>{
                 </option>
               ))}
             </select>
-            <Link to="/shop" onClick={addToShopingHandeler}>add to shoping</Link>
           </section>
         </>
       )}
-    </ContainerDetailCard>
+    </DetailCardPage>
   );
 }
 
