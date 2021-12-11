@@ -1,11 +1,15 @@
 
-
-function ButtonNavbar() {
+// style
+import{ButtonNavbars} from "./view"
+function ButtonNavbar({route,value}) {
     return (
-        <div>
-            
-        </div>
-    )
+      <ButtonNavbars
+        to={route}
+     
+      >
+        {value}
+      </ButtonNavbars>
+    );
 }
 
 export default ButtonNavbar;

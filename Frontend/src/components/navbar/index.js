@@ -2,50 +2,50 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 // icons
-import { FaBars, FaShoppingCart, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+// component
+import ButtonNavbar from "../Buttons/buttonNavbar";
 // style
 import {
   ContainerIcons,
   Header,
   Menu,
   Nav,
-  NavLinks,
   NavLinksShop,
   ShopNumber,
   Title,
 } from "./view";
 
-
-
 const Navbar = () => {
+
   // use state for button mobile screen
   const [click, setClick] = useState(false);
-  // functions for change mood
+  // functions for change mood bar
   const handelClick = () => {
     setClick(!click);
   };
 
-
-  // 
-  const card = useSelector(state=>state.card)
-  const {cardItems} = card
-  const getCardCount = ()=>{
+  //update number in button
+  const card = useSelector((state) => state.card);
+  const { cardItems } = card;
+  const getCardCount = () => {
     return cardItems.reduce((qty, item) => qty + Number(item.qty), 0);
-  }
+  };
   return (
     <Header>
       <Title to="/">BrandShop</Title>
       <Nav click={click}>
         <Menu>
-          <li className={{ backgroundColor: "red", height: "100px" }}>
+          <li>
+            {/* button component */}
+            <ButtonNavbar route="/products" value="Product" />
+          </li>
+          <li>
+            {/* this button have style in this component */}
             <NavLinksShop to="/shop">
-             
               shop
               <ShopNumber>{getCardCount()}</ShopNumber>
             </NavLinksShop>
-          </li>
-          <li>
-            <NavLinks to="/products">Product</NavLinks>
           </li>
         </Menu>
       </Nav>

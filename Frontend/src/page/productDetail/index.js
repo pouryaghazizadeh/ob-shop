@@ -9,13 +9,13 @@ import { getProductDetails } from "../../redux/actions/productActions";
 import BootonBlack from "../../components/Buttons/buttonBlack/index"
 // style
 import {
-  AddCardToShop,
+SelectDetail,
   CardsDetail,
   DetailCardPage,
   ContainrtInfo,
   DescriptionCardDetail,
   ImgDetailCard,
-  OptionCard,
+ProceAndStock,
   LoadingAndErrorText,
   NamedetailProduct,
 } from "./view";
@@ -59,36 +59,33 @@ const addToShopingHandeler = ()=>{
               <DescriptionCardDetail>
                 {product.description}
               </DescriptionCardDetail>
-              <p>{product.price}</p>
+              <ProceAndStock>price:${product.price}</ProceAndStock>
+              <ProceAndStock>
+                {product.price} 
+                {product.countInStock > 0 ? "in stock" : "out of stock"}
+              </ProceAndStock>
+
+
+              <SelectDetail
+                value={qty}
+                onChange={(e) => {
+                  setQty(e.target.value);
+                }}
+              >
+                {[...Array(product.countInStock).keys()].map((x) => (
+                  <option key={x + 1} value={x + 1}>
+                    {x + 1}
+                  </option>
+                ))}
+              </SelectDetail>
+
               <BootonBlack
                 route="/shop"
                 value="Add Product"
                 event={addToShopingHandeler}
               />
-  
             </ContainrtInfo>
           </CardsDetail>
-
-          {/* this tag is for choose more products */}
-          <OptionCard>vfdbnflbnjfofidnlivjsx</OptionCard>
-          {/* thid price is for all price products */}
-          <p>{product.price}</p>
-          <p>{product.countInStock > 0 ? "in stock" : "out of stock"}</p>
-
-          <section>
-            <select
-              value={qty}
-              onChange={(e) => {
-                setQty(e.target.value);
-              }}
-            >
-              {[...Array(product.countInStock).keys()].map((x) => (
-                <option key={x + 1} value={x + 1}>
-                  {x + 1}
-                </option>
-              ))}
-            </select>
-          </section>
         </>
       )}
     </DetailCardPage>
