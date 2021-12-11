@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProductPage = styled.section`
+export const ProductPage = styled.main`
   margin-top: 75px;
   padding-top: 15px;
   display: flex;

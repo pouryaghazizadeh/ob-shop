@@ -52,7 +52,6 @@ export const LinkView = styled(Link)`
   bottom: 8px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   color: black;
-  color: ;
   &:hover {
     box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.3);
     background: black;

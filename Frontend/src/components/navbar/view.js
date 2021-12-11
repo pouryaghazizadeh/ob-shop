@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Header = styled.header`
@@ -17,10 +17,12 @@ export const Header = styled.header`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled(NavLink)`
   margin-right: 10px;
   margin-left: 10px;
   color: #fff;
+  text-decoration:none;
+  font-size:40px
 `;
 
 export const Nav = styled.nav`
@@ -50,7 +52,6 @@ export const Menu = styled.ul`
   display: flex;
   width: 30%;
   height: 100%;
- background: green;
   align-items: center;
   justify-content: space-around;
   @media screen and (max-width: 870px) {
@@ -60,15 +61,16 @@ export const Menu = styled.ul`
   }
 `;
 
-export const NavLinksShop = styled(Link)`
+export const NavLinksShop = styled(NavLink)`
   text-decoration: none;
   font-size: x-large;
-  background: pink;
-
+  border: 1px solid #fff;
   color: #fff;
- width: 95px;
+  width: 95px;
   height: 45px;
- display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     color: black;
@@ -76,27 +78,34 @@ export const NavLinksShop = styled(Link)`
   }
 `;
 
-export const NavLinks = styled(Link)`
+export const NavLinks = styled(NavLink)`
   text-decoration: none;
   font-size: x-large;
   background: none;
   border: 1px solid #fff;
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 95px;
   height: 45px;
   color: #fff;
   text-align:center
-  &:hover {
+  
+  &:hover:{
     color: black;
     background: #fff;
   }
 `;
 export const ShopNumber = styled.div`
-  background: red;
-  border-radius: 50px;
+  background: #b2b2b2;
+  border-radius: 50%;
   padding: 10px;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;
 
 export const ContainerIcons = styled.div`

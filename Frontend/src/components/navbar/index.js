@@ -34,12 +34,12 @@ const Navbar = () => {
   }
   return (
     <Header>
-      <Title>BrandShop</Title>
+      <Title to="/">BrandShop</Title>
       <Nav click={click}>
         <Menu>
           <li className={{ backgroundColor: "red", height: "100px" }}>
             <NavLinksShop to="/shop">
-              <FaShoppingCart />
+             
               shop
               <ShopNumber>{getCardCount()}</ShopNumber>
             </NavLinksShop>
