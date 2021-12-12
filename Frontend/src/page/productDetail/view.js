@@ -18,14 +18,15 @@ export const LoadingAndErrorText = styled.h2`
   color: #1d1d1f;
 `;
 
-export const CardsDetail = styled.section`
+export const CardsDetail = styled.div`
   width: 70vw;
   height: 80%;
   border: 1px solid rgba(9, 14, 18, 0.3);
   display: flex;
   align-items: flex-start;
-  position: absolute;
+  position: relative;
   padding: 2px;
+  margin-top: 10px;
   margin-left: 10px;
   @media screen and (max-width: 870px) {
     flex-direction: column;
@@ -38,7 +39,7 @@ export const NamedetailProduct = styled.h3`
 `;
 
 export const ContainrtInfo = styled.div`
-  width: auto;
+  width:40vw;
   @media screen and (max-width: 870px) {
     width: 100%;
   
