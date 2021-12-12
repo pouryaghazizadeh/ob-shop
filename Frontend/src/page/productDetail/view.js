@@ -58,7 +58,8 @@ export const ImgDetailCard = styled.img`
 
 export const DescriptionCardDetail = styled.p`
   font-size: x-large;
-  @media screen and (max-width:1203px) {
+  color: rgba(51, 51, 50,01);
+   @media screen and (max-width: 1203px) {
     font-size: large;
   }
 `;

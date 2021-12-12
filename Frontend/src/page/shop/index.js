@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // componrnts
 import CardShop from "../../components/cardShop/index";
 import { addToCards, removeFromCard } from "../../redux/actions/cardActions";
+import ButtonBlack from "../../components/Buttons/buttonBlack/index"
 // style
 import { ContainerCard, ShopPage, InfoBuy } from "./view";
 
@@ -35,10 +36,10 @@ function Shop() {
   return (
     <ShopPage>
       <ContainerCard>
-        {cardItems === 0 ? (
+        {cardItems.length === 0 ? (
           <>
-            <h3>your card is empty</h3>
-            <Link to="/product">Go to the product</Link>
+            <h2>your card is empty</h2>
+            <ButtonBlack route="/products" value="Product Page" />
           </>
         ) : (
           cardItems.map((item) => (
@@ -54,7 +55,7 @@ function Shop() {
       <InfoBuy>
         <p>subtotal ( {getCardCount()} )ithem</p>
         <p>${getcardSubTotal().toFixed(2)}</p>
-        <button>gfre</button>
+        <ButtonBlack route="#" value="Buy" />
       </InfoBuy>
     </ShopPage>
   );
