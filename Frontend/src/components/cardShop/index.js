@@ -34,7 +34,7 @@ function CardShop({ item, qtyChangeHandeler, removeHandeler }) {
             </option>
           ))}
         </SelectProductCard>
-      </ItemsCards>
+      </ItemsCards >
       <ItemsCards>
         <ContainerDeleteIcon onClick={() => removeHandeler(item.product)}>
           <MdDelete />
