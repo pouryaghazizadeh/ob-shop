@@ -33,7 +33,7 @@ const Navbar = () => {
   };
   return (
     <Header>
-      <Title to="/">BrandShop</Title>
+      <Title to="/">OB-Shop</Title>
       <Nav click={click}>
         <Menu>
           <li>

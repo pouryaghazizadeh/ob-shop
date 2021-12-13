@@ -21,8 +21,13 @@ export const Title = styled(NavLink)`
   margin-right: 10px;
   margin-left: 10px;
   color: #fff;
-  text-decoration:none;
-  font-size:40px
+  text-decoration: none;
+  font-size: 40px;
+  width: 310px;
+  @media screen and (max-width: 870px) {
+    font-size: 35px;
+    width: 240px;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -30,14 +35,12 @@ export const Nav = styled.nav`
   height: 100%;
   display: flex;
   justify-content: flex-end;
-
   padding-right: 10px;
   transition: all 0.5s ease;
   @media screen and (max-width: 870px) {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
     position: absolute;
     top: 75px;
     left: ${({ click }) => (click ? "0px" : "-100%")};
