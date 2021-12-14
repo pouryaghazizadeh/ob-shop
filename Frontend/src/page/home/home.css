@@ -2,21 +2,23 @@
   width: 100vw;
   height: 100vh;
   margin-top: 75px;
-  background-color: aqua;
+
 }
 
 .container1 {
-  width: 100%;
+  width: 100vw;
   height: 800px;
   background: black;
   display: flex;
   justify-content: center;
+  margin-right: 0;
 }
 
 .container-text {
   width: 70%;
   /* position: absolute;
   top: 0; */
+  
   display: flex;
   justify-content: space-between;
 }
@@ -42,21 +44,28 @@
 
 /* container 2 */
 
-.container2{
+.container-card-home{
 width: 100vw;
 height:750px ;
 background: rgb(255, 247, 247);
 display: flex;
 align-items: center;
 justify-content: space-between;
+padding: 9px;
 }
-.text-container2{
+.container-card-home:nth-child(2n+1){
+  background: black;
+  color: #fff;
+  flex-direction:row-reverse
+}
+.title-card-homepage{
     font-size: 3.5rem;
     margin: 20px;
 }
-.img-container2{
+.img-card-homepage{
 width: 50%;
 height: 500px;
+
 }
 
 
