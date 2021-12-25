@@ -1,3 +1,7 @@
+// import bcrypt for hash password
+const bcrypt = require("bcrypt");
+//get  model schema user
+const User = require("../models/user");
 const registerUser = async (req, res) => {
   try {
     //   check registration be completed
@@ -23,13 +27,39 @@ const registerUser = async (req, res) => {
         .status(406)
         .json({ err: "password must be same for verification" });
     }
-    res.json({ email, password, passwordCheck, userName });
+    // hashing password
+    const hash = await bcrypt.hashSync(password, 10);
+    // pss hash to callback function for send to loginController
+    getHash(hash);
+    // use document structure
+    const newUser = new User({
+      email,
+      password: hash,
+      userName,
+    });
+    // send data to mongodb
+    newUser
+      .save(newUser)
+      .then((register) => {
+        res.json(register);
+      })
+      .catch((error) => {
+        res.status(406).json({
+          err: error.massage || "Something went wrong while registration",
+        });
+      });
+
+    //
+
   } catch (error) {
     res.status(500).json({ err: error.message || "error while registration" });
   }
 };
 
-
+const getHash = (hash) => {
+  return hash;
+};
 module.exports = {
   registerUser,
+  getHash,
 };

@@ -5,8 +5,8 @@ const connectDB = require("../config/db");
 // routes
 const productsRoutes = require("../routes/product.routes.js");
 const homeRoutes = require("../routes/home.routes");
+const registerRouter = require("../routes/register.routes");
 const loginRouter = require("../routes/login.routes");
-const registerRouter = require("../routes/register.routes")
 // run db
 connectDB();
 
@@ -18,6 +18,7 @@ app.use("/api/products", productsRoutes);
 app.use("/api/", homeRoutes);
 app.use("/api/login", loginRouter);
 app.use("/api/register", registerRouter);
+app.use("/api/login", loginRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`port run on port ${process.env.PORT}`);
