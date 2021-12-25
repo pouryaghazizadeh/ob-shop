@@ -13,7 +13,7 @@ function Home() {
 
   useEffect(() => {
     aos.init({ duration: 600 });
-    dispatch(listDataHome);
+    dispatch(listDataHome());
   }, [dispatch]);
 
   return (
