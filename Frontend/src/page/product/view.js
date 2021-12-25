@@ -13,6 +13,7 @@ export const ProductPage = styled.main`
 `;
 
 
+
 export const LoadingAndErrorTitleProduct = styled.h2`
 font-size:45px ;
 color:#1d1d1f;

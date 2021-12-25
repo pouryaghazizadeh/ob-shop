@@ -1,59 +1,72 @@
-// tools
 import aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect} from "react";
-import styled from "styled-components";
-// data
-import { data } from "../../data";
 // style
+import "aos/dist/aos.css";
+// tools
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {getDataHome as listDataHome} from "../../redux/actions/homeAction"
 import "./home.css";
-
-
 function Home() {
+  const dispatch = useDispatch();
+  const  getDataHome = useSelector((state) => state.getDataHome);
+  const { dataHome, loading, error } = getDataHome;
+
   useEffect(() => {
     aos.init({ duration: 600 });
-  }, []);
-
+    dispatch(listDataHome);
+  }, [dispatch]);
 
   return (
     <main className="HomePage">
-      <section className="container1">
-        <div className="container-text">
-          <h2
-            data-aos="fade-down"
-            data-aos-delay="500"
-            className="Welcome-text"
-          >
-            Welcome
-          </h2>
+      {loading ? (
+        <h2>loading...</h2>
+      ) : error ? (
+        <h2>{error}</h2>
+      ) : (
+        <>
+          <section className="container1">
+            <div className="container-text">
+              <h2
+                data-aos="fade-down"
+                data-aos-delay="500"
+                className="Welcome-text"
+              >
+                Welcome
+              </h2>
 
-          <h2 data-aos="fade-down" data-aos-delay="1000" className="To-text">
-            To
-          </h2>
-          <h2 data-aos="fade-down" data-aos-delay="1400" className="title-text">
-            OB-Shop
-          </h2>
-        </div>
-      </section>
-      {/* second container */}
-
-      {data.map((v) => {
-        return (
-          <div key={v.id} className="container-card-home">
-            <p className="title-card-homepage" data-aos={v.animationText}>
-              {v.title}
-            </p>
-            <img
-              alt={v.title}
-              src={v.img}
-              className="img-card-homepage"
-              data-aos={v.animationImg}
-            />
-          </div>
-        );
-      })}
-     
-      
+              <h2
+                data-aos="fade-down"
+                data-aos-delay="1000"
+                className="To-text"
+              >
+                To
+              </h2>
+              <h2
+                data-aos="fade-down"
+                data-aos-delay="1400"
+                className="title-text"
+              >
+                OB-Shop
+              </h2>
+            </div>
+          </section>
+          {dataHome.map((v) => {
+            return (
+              <div key={v.id} className="container-card-home">
+                <p className="title-card-homepage" data-aos={v.animationText}>
+                  {v.title}
+                </p>
+                <img
+                  alt={v.title}
+                  src={v.img}
+                  className="img-card-homepage"
+                  data-aos={v.animationImg}
+                />
+              </div>
+            );
+          })}
+        </>
+      )}
     </main>
   );
 }

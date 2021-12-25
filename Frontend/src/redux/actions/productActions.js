@@ -1,7 +1,7 @@
 // action type Product
+import * as actionTypes from "../constants/productConstants";
 // tools
 import axios from "axios";
-import * as actionTypes from "../constants/productConstants";
 // this will go to home page
 export const getProducts= () => async (dispatch) => {
   try {
@@ -15,8 +15,8 @@ export const getProducts= () => async (dispatch) => {
     dispatch({
       type: actionTypes.GET_PRODUCTS_FAIL,
       payload:
-        error.respose && error.respose.data.message
-          ? error.respose.data.message
+        error.response && error.response.data.message
+          ? error.response.data.message
           : error.message,
     });
   }
@@ -36,8 +36,8 @@ export const getProductDetails = (id) => async (dispatch) => {
     dispatch({
       type: actionTypes.GET_PRODUCTS_FAIL,
       payload:
-        error.respose && error.respose.data.message
-          ? error.respose.data.message
+        error.response && error.response.data.message
+          ? error.response.data.message
           : error.message,
     });
   }
