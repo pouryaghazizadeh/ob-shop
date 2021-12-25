@@ -10,7 +10,7 @@ import {
   ItemsCards,
 } from "./view";
 
-function CardShop({ item, qtyChangeHandeler, removeHandeler }) {
+function CardShop({ item, qtyChangeHandler, removeHandler }) {
   return (
     <CardContainer>
       <ItemsCards>
@@ -26,7 +26,7 @@ function CardShop({ item, qtyChangeHandeler, removeHandeler }) {
       <ItemsCards>
         <SelectProductCard
           value={item.qty}
-          onChange={(e) => qtyChangeHandeler(item.product, e.target.value)}
+          onChange={(e) => qtyChangeHandler(item.product, e.target.value)}
         >
           {[...Array(item.countInStock).keys()].map((v) => (
             <option key={v + 1} value={v + 1}>
@@ -36,7 +36,7 @@ function CardShop({ item, qtyChangeHandeler, removeHandeler }) {
         </SelectProductCard>
       </ItemsCards >
       <ItemsCards>
-        <ContainerDeleteIcon onClick={() => removeHandeler(item.product)}>
+        <ContainerDeleteIcon onClick={() => removeHandler(item.product)}>
           <MdDelete />
         </ContainerDeleteIcon>
       </ItemsCards>

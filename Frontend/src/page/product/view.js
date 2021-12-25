@@ -10,6 +10,7 @@ export const ProductPage = styled.main`
   justify-content: center;
   height: 100%;
   background: #fff;
+
 `;
 
 

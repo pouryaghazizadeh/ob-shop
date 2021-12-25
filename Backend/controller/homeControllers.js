@@ -3,7 +3,7 @@ const Home = require("../models/Home");
 
 const getHome = async (req, res) => {
   try {
-    const home = await Product.find({});
+    const home = await Home.find({});
     res.json(home);
   } catch (err) {
     console.error(err);

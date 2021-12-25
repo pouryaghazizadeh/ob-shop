@@ -5,5 +5,5 @@ const getHome = require('../controller/homeControllers')
 //@ desc Get home data from db
 //@ route Get /api/home
 //@ access public 
-router.get("/api", getHome);
+router.get("/", getHome);
 module.exports = router;

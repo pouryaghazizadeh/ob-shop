@@ -37,6 +37,7 @@ export const Nav = styled.nav`
   justify-content: flex-end;
   padding-right: 10px;
   transition: all 0.5s ease;
+
   @media screen and (max-width: 870px) {
     flex-direction: column;
     align-items: center;
@@ -53,7 +54,7 @@ export const Nav = styled.nav`
 export const Menu = styled.ul`
   list-style: none;
   display: flex;
-  width: 30%;
+  width: 47%;
   height: 100%;
   align-items: center;
   justify-content: space-around;

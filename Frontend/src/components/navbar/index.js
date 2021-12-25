@@ -47,6 +47,9 @@ const Navbar = () => {
               <ShopNumber>{getCardCount()}</ShopNumber>
             </NavLinksShop>
           </li>
+          <li>
+            <ButtonNavbar route="/login" value="Login" />
+          </li>
         </Menu>
       </Nav>
       <ContainerIcons onClick={handelClick} click={click}>
