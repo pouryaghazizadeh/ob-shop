@@ -6,3 +6,4 @@ router.get("/login", (req, res) => {
   res.send("helooo");
 });
 
+module.exports = router;
