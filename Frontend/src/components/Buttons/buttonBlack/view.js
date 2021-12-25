@@ -17,5 +17,6 @@ export const ButtonBlacks = styled(Link)`
     background-color: #fff;
     color: #090d11;
     border: 1px solid #090d11;
+
   }
 `;

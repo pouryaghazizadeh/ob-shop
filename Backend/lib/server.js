@@ -11,15 +11,12 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-
+// define routes
+// note /api/ =>that means api and in the routs file / this means endpoint
 app.use("/api/products", productsRoutes);
 app.use("/api/", homeRoutes);
 
-// // home page
-// app.get("/", (req, res) => {
-//   res.send("hello home page");
-//   res.json();
-// });
+
 
 app.listen(process.env.PORT, () => {
   console.log(`port run on port ${process.env.PORT}`);

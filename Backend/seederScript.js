@@ -2,7 +2,6 @@ require("dotenv").config();
 // data
 const productsData = require("./data/products");
 const homeData = require('./data/home')
-
 // db
 const connectDB = require("./config/db");
 // product model
