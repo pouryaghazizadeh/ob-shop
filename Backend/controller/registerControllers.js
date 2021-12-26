@@ -50,7 +50,6 @@ const registerUser = async (req, res) => {
       });
 
     //
-
   } catch (error) {
     res.status(500).json({ err: error.message || "error while registration" });
   }

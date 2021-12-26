@@ -1,8 +1,11 @@
+require("dotenv").config();
 // import bcrypt for hash password
 const bcrypt = require("bcrypt");
 //get  model schema user
 const User = require("../models/user");
-const  {getHash} = require("./registerControllers")
+// jwt
+const jwt = require("jsonwebtoken");
+
 const loginUser = async (req, res) => {
   try {
     //   validate request
@@ -17,19 +20,21 @@ const loginUser = async (req, res) => {
       return res.status(406).json({ err: "Not all fields have been entered" });
     }
     // check user is exist
-    const user = await User.findOne({email})
-    if(!user){
-    return res.status(406).json({err:"No account with this email."})
-    
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(406).json({ err: "No account with this email." });
     }
     const isMatch = bcrypt.compare(password, user.password);
-    if(!isMatch){
-    return res.status(406).json({err:"invalid email or password"})
-     }
+    if (!isMatch) {
+      return res.status(406).json({ err: "invalid email or password" });
+    }
+
+    // create jwt token
+    const token = jwt.sign({ id: user._id }, process.env.jwtSecret);
+
     // this line must be end for work your validations and
-    // this show us email and userName for show in the front end
-    
-    res.json({ userName:user.userName, email:user.email });
+    // this show us email and userName for show in the frontend
+    res.json({ token, userName: user.userName, email: user.email });
   } catch (error) {
     return res.status(500).json({ err: error.massage || "Error while login" });
   }
