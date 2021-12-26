@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/index";
 import GlobalStyle from "./globalStyles";
-import CardDetail from "./page/productDetail";
-import Products from "./page/product";
 import Home from "./page/home/index";
-import Shop from "./page/shop";
+import Login from "./page/login/Login";
+import Products from "./page/product";
+import CardDetail from "./page/productDetail";
 import Register from "./page/register/Register";
-
+import Shop from "./page/shop";
 function App() {
   return (
     <div className="App">
@@ -18,6 +18,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <GlobalStyle />
     </div>

@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors  = require('cors')
 // import database
 const connectDB = require("../config/db");
 // routes
@@ -12,6 +13,7 @@ connectDB();
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 // define routes
 // note /api/ =>that means api and in the routs file / this means endpoint
 app.use("/api/products", productsRoutes);
