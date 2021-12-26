@@ -34,12 +34,30 @@ const loginUser = async (req, res) => {
 
     // this line must be end for work your validations and
     // this show us email and userName for show in the frontend
-    res.json({ token, userName: user.userName, email: user.email });
+    res.json({ token, userName: user.userName, email: user.email,id:user._id});
   } catch (error) {
     return res.status(500).json({ err: error.massage || "Error while login" });
   }
 };
 
+
+
+
+
+
+// delete user
+const deleteUser =async(req,res)=>{
+  try {
+    await User.findByIdAndDelete(req.user._id)
+    res.json({msg:"deleted successfully...!"})
+    
+  } catch (error) {
+    res.status(500).json({err:error.massage||"Error while deleting user"})
+    
+  }
+}
+
 module.exports = {
   loginUser,
+  deleteUser,
 };

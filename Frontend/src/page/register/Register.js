@@ -3,12 +3,30 @@ import  { useState } from "react";
 function Register() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(null);
-  const [checkPassword, setCheckPassword] = useState(null);
-
+  const [password, setPassword] = useState("");
+  const [checkPassword, setCheckPassword] = useState("");
+// on form submit event handler
+const handelSubmit = (e)=>{
+e.preventDefault()
+const newUser = {
+  userName,
+  email,
+  password,
+  checkPassword,
+};
+console.log(newUser);
+}
   return (
     <main>
-      <form>
+      <h2>hhhhhhhh</h2>
+      <h2>hhhhhhhh</h2>
+      <h2>hhhhhhhh</h2>
+      <h2>hhhhhhhh</h2>
+      <h2>hhhhhhhh</h2>
+      <h2>hhhhhhhh</h2>
+      <h2>hhhhhhhh</h2>
+      <h2>hhhhhhhh</h2>
+      <form method="post" onSubmit={handelSubmit}>
         <input
           type="text"
           placeholder="userName"
@@ -32,7 +50,7 @@ function Register() {
         />
         <input
           type="password"
-          placeholder="password again"
+          placeholder="verify password "
           onChange={(e) => {
             setCheckPassword(e.target.value);
           }}

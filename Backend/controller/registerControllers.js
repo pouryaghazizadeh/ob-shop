@@ -2,6 +2,11 @@
 const bcrypt = require("bcrypt");
 //get  model schema user
 const User = require("../models/user");
+
+
+
+
+// make user
 const registerUser = async (req, res) => {
   try {
     //   check registration be completed
@@ -29,8 +34,7 @@ const registerUser = async (req, res) => {
     }
     // hashing password
     const hash = await bcrypt.hashSync(password, 10);
-    // pss hash to callback function for send to loginController
-    getHash(hash);
+
     // use document structure
     const newUser = new User({
       email,
@@ -55,10 +59,7 @@ const registerUser = async (req, res) => {
   }
 };
 
-const getHash = (hash) => {
-  return hash;
-};
 module.exports = {
   registerUser,
-  getHash,
+
 };
