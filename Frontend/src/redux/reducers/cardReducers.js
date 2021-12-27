@@ -27,7 +27,9 @@ export const cardReducers = (state = { cardItems: [] }, action) => {
     case actionTypes.REMOVE_FROM_CARD:
       return {
         ...state,
-        cardItems: state.cardItems.filter((data) => data.product !== action.payload),
+        cardItems: state.cardItems.filter(
+          (data) => data.product !== action.payload
+        ),
       };
     default:
       return state;

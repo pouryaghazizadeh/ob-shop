@@ -1,6 +1,6 @@
 import * as actionType from "../constants/homeConstants";
 // this for home page
-export const getDataHomeReducer = (state = {dataHome: [] }, action) => {
+export const getDataHomeReducer = (state = { dataHome: [] }, action) => {
   switch (action.type) {
     case actionType.GET_HOME_REQUEST:
       return {

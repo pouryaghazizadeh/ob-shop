@@ -12,8 +12,11 @@ function Login() {
       email,
       password,
     };
-
-    const login = dispatch(logonAction(userCredential));
+    const ab = {
+      email:"dfggh@gmail.com",
+      password:"123456765432",
+    };
+    const login = dispatch(logonAction(ab));
     login
       .then((data) => {
         console.log(data);
@@ -51,7 +54,7 @@ function Login() {
             setPassword(e.target.value);
           }}
         />
-        <button>login</button>
+        <button type="submit">login</button>
       </form>
     </main>
   );
