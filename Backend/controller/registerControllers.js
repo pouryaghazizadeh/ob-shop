@@ -3,9 +3,6 @@ const bcrypt = require("bcrypt");
 //get  model schema user
 const User = require("../models/user");
 
-
-
-
 // make user
 const registerUser = async (req, res) => {
   try {
@@ -61,5 +58,4 @@ const registerUser = async (req, res) => {
 
 module.exports = {
   registerUser,
-
 };

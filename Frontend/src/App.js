@@ -16,9 +16,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products/productDetail/:id" element={<CardDetail />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/shop" element={<Shop />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
       <GlobalStyle />
     </div>

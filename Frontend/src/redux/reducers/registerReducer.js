@@ -6,7 +6,7 @@ const initialState = {
  
 };
 
-export const registerReducer = (state = initialState, action) => {
+export const registerReducer = (state ={ initialState},action) => {
   switch ((action.type)) {
     case actionType.REGISTER_SUCCESS:
       return {
@@ -22,7 +22,7 @@ export const registerReducer = (state = initialState, action) => {
       return {
         ...state,
         isLeggedIn: true,
-        user: null,//change this line payload.user
+        user: action.payload.user, //change this line payload.user
       };
     case actionType.LOGIN_FAIL:
       return {

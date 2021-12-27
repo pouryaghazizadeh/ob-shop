@@ -16,11 +16,10 @@ app.use(express.json());
 app.use(cors())
 // define routes
 // note /api/ =>that means api and in the routs file / this means endpoint
-app.use("/api/products", productsRoutes);
 app.use("/api/", homeRoutes);
+app.use("/api/products", productsRoutes);
 app.use("/api/login", loginRouter);
 app.use("/api/register", registerRouter);
-app.use("/api/login", loginRouter);
 app.use("/api/delete", registerRouter);
 
 app.listen(process.env.PORT, () => {
