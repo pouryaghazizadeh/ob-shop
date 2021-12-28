@@ -31,7 +31,6 @@ const loginUser = async (req, res) => {
 
     // create jwt token
     const token = jwt.sign({ id: user._id }, process.env.jwtSecret);
-
     // this line must be end for work your validations and
     // this show us email and userName for show in the frontend
     res.json({ token, userName: user.userName, email: user.email,id:user._id});

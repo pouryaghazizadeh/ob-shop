@@ -11,7 +11,7 @@ export const registerReducer = (state ={ initialState},action) => {
     case actionType.REGISTER_SUCCESS:
       return {
         ...state,
-        isLeggedIn: false,
+        isLeggedIn: true,
       };
     case actionType.REGISTER_FAIL:
       return {
@@ -22,7 +22,7 @@ export const registerReducer = (state ={ initialState},action) => {
       return {
         ...state,
         isLeggedIn: true,
-        user: action.payload.user, //change this line payload.user
+        user: action.payload.user,
       };
     case actionType.LOGIN_FAIL:
       return {

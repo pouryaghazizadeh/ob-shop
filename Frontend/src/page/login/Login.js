@@ -12,11 +12,7 @@ function Login() {
       email,
       password,
     };
-    const ab = {
-      email:"dfggh@gmail.com",
-      password:"123456765432",
-    };
-    const login = dispatch(logonAction(ab));
+    const login = dispatch(logonAction(userCredential));
     login
       .then((data) => {
         console.log(data);

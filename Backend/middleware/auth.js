@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 // create a middleware
-
 const auth = (req, res, next) => {
   const token = req.header("x-auth-token");
   if (!token) {
