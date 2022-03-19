@@ -20,8 +20,8 @@ app.use("/api/", homeRoutes);
 app.use("/api/products", productsRoutes);
 app.use("/api/login", loginRouter);
 app.use("/api/register", registerRouter);
-app.use("/api/delete", registerRouter);
+app.use("/api/delete", loginRouter);
 
 app.listen(process.env.PORT, () => {
-  console.log(`port run on port ${process.env.PORT}`);
+  console.log(`port run on port: ${process.env.PORT}`);
 });

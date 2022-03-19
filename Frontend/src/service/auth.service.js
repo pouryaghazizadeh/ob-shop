@@ -7,23 +7,26 @@ const register = async (newUser) => {
     .post("/api/register", newUser)
     .then((response) => {
       if (response) {
-        return Promise.resolve(response);
+        return Promise.resolve(response.data);
       }
     })
     .catch((error) => {
-      return Promise.reject(error.response);
+      return Promise.reject(error.response.data);
     });
 };
 
 // login request
 const login = (userCredential) => {
   return axios
-    .post("/api/login", userCredential)
+    .post("api/login", userCredential)
     .then((response) => {
-      if (response) {
+      if (response.data) {
         localStorage.setItem("x-auth-token", response);
+        return Promise.resolve(response);
+      }else{
+        console.log("you have problemccccc");
       }
-      return Promise.resolve(response);
+      
     })
     .catch((error) => {
       return Promise.reject(error.response);

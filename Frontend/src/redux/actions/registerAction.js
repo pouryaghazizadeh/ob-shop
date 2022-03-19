@@ -10,6 +10,7 @@ export const registerAction = (payload) => (dispatch) => {
         type: actionType.REGISTER_SUCCESS,
         payload: response,
       });
+      console.log(`erere${response}`);
       return Promise.resolve(response);
     })
     .catch((error) => {
